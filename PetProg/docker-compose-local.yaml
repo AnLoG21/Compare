@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+#  app:
+#    build: ./MVVM/Model/
+#    environment:
+#      - DISPLAY=host.docker.internal:0.0
+#      - DB_HOST='postgres'
+#    volumes:
+#      - /tmp/.X11-unix:/tmp/.X11-unix
+#    ports:
+#      - "8080:8080"
+  db:
+    image: postgres:14
+    container_name: "postgres"
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Log680968amr
+      - POSTGRES_DB=postgres
+    ports:
+      - "5434:5432"
+    networks:
+      - custom
+networks:
+  custom:
+    driver: bridge
